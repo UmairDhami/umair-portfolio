@@ -9,8 +9,8 @@ export const profile = {
   email: 'umairdhami143@gmail.com',
   phone: '+92 310 4542479',
   location: 'Lahore, Pakistan',
-  linkedin: '#', // <- paste your LinkedIn URL
-  github: '#',   // <- paste your GitHub URL
+  linkedin: 'https://www.linkedin.com/in/umair-saleem-dhami/',
+  github: 'https://github.com/UmairDhami',
 };
 
 export const stats = [
