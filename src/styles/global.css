@@ -196,7 +196,8 @@ img { max-width: 100%; display: block; }
 .pcard { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surf); transition: border-color .25s, transform .25s; }
 .pcard:hover { border-color: #8b6bff66; transform: translateY(-4px); }
 .pshot { aspect-ratio: 16/11; display: flex; flex-direction: column; position: relative; overflow: hidden; }
-.pshot > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pshot > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.pcard:hover .pshot > img { transform: scale(1.04); transition: transform .5s ease; }
 .pbar { display: flex; align-items: center; gap: 6px; padding: 10px 13px; background: #00000040; border-bottom: 1px solid #ffffff1f; position: relative; z-index: 1; }
 .pbar i { width: 9px; height: 9px; border-radius: 50%; background: #ffffff4d; display: block; }
 .pbar .u { margin-left: 8px; font-family: var(--font-mono); font-size: 10px; color: #ffffffd0; letter-spacing: .02em; }
