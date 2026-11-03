@@ -1,18 +1,20 @@
 ---
+import Icon from './Icon.astro';
 const { project } = Astro.props;
-const { name, category, year, domain, url, thumb, full } = project;
-const data = JSON.stringify({ name, domain, url, full });
+const { name, tagline, category, year, domain, url, image, gradient } = project;
+const Tag = url ? 'a' : 'div';
+const linkAttrs = url ? { href: url, target: '_blank', rel: 'noopener' } : {};
 ---
-<button class="wcard" data-reveal type="button" data-work={data} aria-label={`Preview the ${name} website`}>
-  <div class="wthumb">
-    <img src={thumb} alt={`${name} website homepage`} loading="lazy" width="820" height="512" />
-    <span class="play"><span class="pill">View preview</span></span>
+<Tag class="pcard" data-reveal {...linkAttrs} aria-label={url ? `${name} — open live site` : name}>
+  <div class="pshot" style={!image ? `background:${gradient}` : ''}>
+    {image && <img src={image} alt={`${name} website screenshot`} loading="lazy" />}
+    <div class="pbar"><i></i><i></i><i></i><span class="u">{domain}</span></div>
+    {!image && (
+      <div class="mid"><h3 set:html={tagline.replace('\n', '<br>')} /></div>
+    )}
   </div>
-  <div class="wfoot">
-    <div>
-      <b>{name}</b>
-      <span class="cat">{category} · {year}</span>
-    </div>
-    <span class="go" aria-hidden="true">⤢</span>
+  <div class="pfoot">
+    <div><b>{name}</b><span class="cat">{category} · {year}</span></div>
+    <span class="go"><Icon name="arrow" size={15} /></span>
   </div>
-</button>
+</Tag>
