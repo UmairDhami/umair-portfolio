@@ -6,9 +6,25 @@ import { projects } from '../data/projects.js';
   <span class="idx">03 — Selected work</span>
   <div class="sechead">
     <h2>A few things <span class="grad">I've worked on.</span></h2>
-    <p>A selection of projects from my professional work. Live screenshots and URLs drop straight into these frames.</p>
+    <p>Click any site to watch a full-page preview scroll through, top to bottom.</p>
   </div>
-  <div class="pgrid">
+  <div class="wgrid">
     {projects.map((project) => <ProjectCard project={project} />)}
   </div>
 </section>
+
+<!-- Full-page preview modal (one shared instance) -->
+<div class="wm" id="work-modal" hidden role="dialog" aria-modal="true" aria-label="Website preview">
+  <div class="wm-backdrop"></div>
+  <div class="wm-dialog">
+    <div class="wm-bar">
+      <i></i><i></i><i></i>
+      <span class="u" id="wm-domain"></span>
+      <a class="wm-visit" id="wm-visit" href="#" target="_blank" rel="noopener">Visit site ↗</a>
+      <button class="wm-close" id="wm-close" type="button" aria-label="Close preview">✕</button>
+    </div>
+    <div class="wm-view" id="wm-view">
+      <img class="wm-img" id="wm-img" alt="" />
+    </div>
+  </div>
+</div>
