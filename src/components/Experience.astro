@@ -1,0 +1,25 @@
+---
+import { experience } from '../data/content.js';
+---
+<section class="wrap sec" id="experience">
+  <span class="idx">04 — The journey</span>
+  <div class="sechead">
+    <h2>Experience that <span class="grad">keeps me growing.</span></h2>
+    <p>A path combining web development, collaboration, and a detail-oriented approach to getting work done.</p>
+  </div>
+  <div class="exp">
+    {experience.map((job) => (
+      <article class="expcard" data-reveal>
+        <div>
+          <div class="when">{job.when}</div>
+          {job.current && <span class="cur">Current role</span>}
+        </div>
+        <div>
+          <h3>{job.role}</h3>
+          <div class="org">{job.org}</div>
+          <ul>{job.points.map((p) => <li>{p}</li>)}</ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

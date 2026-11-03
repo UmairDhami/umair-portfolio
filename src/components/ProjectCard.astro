@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+const { project } = Astro.props;
+const { name, tagline, category, year, domain, url, image, gradient } = project;
+const Tag = url ? 'a' : 'div';
+const linkAttrs = url ? { href: url, target: '_blank', rel: 'noopener' } : {};
+---
+<Tag class="pcard" data-reveal {...linkAttrs} aria-label={url ? `${name} — open live site` : name}>
+  <div class="pshot" style={!image ? `background:${gradient}` : ''}>
+    {image && <img src={image} alt={`${name} website screenshot`} loading="lazy" />}
+    <div class="pbar"><i></i><i></i><i></i><span class="u">{domain}</span></div>
+    {!image && (
+      <div class="mid"><h3 set:html={tagline.replace('\n', '<br>')} /></div>
+    )}
+  </div>
+  <div class="pfoot">
+    <div><b>{name}</b><span class="cat">{category} · {year}</span></div>
+    <span class="go"><Icon name="arrow" size={15} /></span>
+  </div>
+</Tag>

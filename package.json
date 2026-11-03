@@ -1,0 +1,17 @@
+{
+  "name": "umair-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Umair Saleem — WordPress & Web Developer portfolio (Astro + GSAP)",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.18"
+  }
+}

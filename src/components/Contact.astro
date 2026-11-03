@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/content.js';
+---
+<section class="wrap" id="contact">
+  <div class="contact" data-reveal>
+    <span class="eyebrow">07 — Let's connect</span>
+    <h2 style="margin-top:18px">Have a project in mind? <span class="grad">Let's make it happen.</span></h2>
+    <p class="lead">
+      Have a website idea, need a WordPress specialist, or want to improve an existing site?
+      I'd love to hear what you're working on.
+    </p>
+    <div class="cinfo">
+      <div><div class="k">Email</div><a class="v" href={`mailto:${profile.email}`}>{profile.email}</a></div>
+      <div><div class="k">Phone</div><div class="v">{profile.phone}</div></div>
+      <div><div class="k">Location</div><div class="v">{profile.location}</div></div>
+    </div>
+    <div class="cta">
+      <a href={`mailto:${profile.email}`} class="btn fill lg">Start a conversation <Icon name="arrow" size={15} /></a>
+      <a href="#top" class="btn ghost lg">Back to top</a>
+    </div>
+  </div>
+</section>

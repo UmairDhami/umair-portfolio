@@ -1,0 +1,14 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects.js';
+---
+<section class="wrap sec" id="work">
+  <span class="idx">03 — Selected work</span>
+  <div class="sechead">
+    <h2>A few things <span class="grad">I've worked on.</span></h2>
+    <p>A selection of projects from my professional work. Live screenshots and URLs drop straight into these frames.</p>
+  </div>
+  <div class="pgrid">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>

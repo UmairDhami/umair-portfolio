@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import { services } from '../data/content.js';
+---
+<section class="wrap sec" id="services">
+  <span class="idx">02 — What I do</span>
+  <div class="sechead">
+    <h2>Skills built for the <span class="grad">modern web.</span></h2>
+    <p>From flexible WordPress builds to performance and security, I bring design, functionality, and usability together.</p>
+  </div>
+  <div class="svc">
+    {services.map((s) => (
+      <article class="card" data-reveal>
+        <span class="ic"><Icon name={s.icon} size={22} /></span>
+        <h3>{s.title}</h3>
+        <p>{s.desc}</p>
+        <div class="tags">{s.tags.map((t) => <span>{t}</span>)}</div>
+      </article>
+    ))}
+  </div>
+</section>

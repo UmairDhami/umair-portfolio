@@ -1,0 +1,21 @@
+---
+import { education } from '../data/content.js';
+---
+<section class="wrap sec" id="education">
+  <span class="idx">06 — Education</span>
+  <div class="sechead">
+    <h2>Always learning. <span class="grad">Always building.</span></h2>
+  </div>
+  <div class="edu">
+    {education.map((e) => (
+      <div class="edurow" data-reveal>
+        <span class="yr">{e.years}</span>
+        <div>
+          <div class="deg">{e.degree}</div>
+          <div class="inst">{e.inst}</div>
+        </div>
+        <span class="kind">{e.kind}</span>
+      </div>
+    ))}
+  </div>
+</section>

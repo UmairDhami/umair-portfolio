@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/content.js';
+---
+<nav class="nav">
+  <a class="brand" href="#top" aria-label={`${profile.name} home`}>
+    <span class="mk">US</span>
+    <span><b>{profile.name}</b><span class="role">{profile.title}</span></span>
+  </a>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn fill sm">Let's talk <Icon name="arrow" size={14} /></a>
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+---
+import { marquee } from '../data/content.js';
+const loop = [...marquee, ...marquee];
+---
+<div class="wrap">
+  <div class="marq" aria-hidden="true">
+    <div class="row">
+      {loop.map((word, i) => <span class={i % 2 === 1 ? 'o' : ''}>{word}</span>)}
+    </div>
+  </div>
+</div>

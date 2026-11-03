@@ -1,0 +1,20 @@
+---
+import { toolkit } from '../data/content.js';
+---
+<section class="wrap sec" id="toolkit">
+  <span class="idx">05 — My toolkit</span>
+  <div class="sechead">
+    <h2>The tools behind <span class="grad">the work.</span></h2>
+    <p>A practical mix of development, design, optimization, and collaboration tools.</p>
+  </div>
+  <div class="tk">
+    {toolkit.map((group) => (
+      <div class="tkrow" data-reveal>
+        <div class="cat">{group.cat}</div>
+        <div class="chips">
+          {group.items.map(([label, hot]) => <span class={hot ? 'chip hot' : 'chip'}>{label}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
